@@ -1,0 +1,106 @@
+// components/colors
+// Global Project Colors
+
+/* ==========================================================================
+   Social Networks
+   ========================================================================== */
+$facebook: #3b5998;
+$twitter: #55acee;
+$googleplus: #dd4b39;
+$youtube: #b00;
+$linkedin: #007bb5;
+$instagram: #125688;
+$whatsapp: #4dc247;
+$pinterest: #cb2027;
+$snapchat: #fffc00;
+
+$socialnetworks: (
+    facebook: $facebook,
+    twitter: $twitter,
+    googleplus: $googleplus,
+    youtube: $youtube,
+    linkedin: $linkedin,
+    instagram: $instagram,
+    whatsapp: $whatsapp,
+    pinterest: $pinterest,
+    snapchat: $snapchat,
+) !default;
+
+@each $socialnetwork in map-keys($socialnetworks) {
+    %bg-#{$socialnetwork} {
+        background-color: map-get($socialnetworks, $socialnetwork);
+    }
+
+    %fg-#{$socialnetwork} {
+        color: map-get($socialnetworks, $socialnetwork);
+    }
+}
+
+%bg-instagram {
+    background:
+       /////// Use radial gradients to get the rounded
+       /////// gradient effect in each corner
+       // left bottom
+       radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+       radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+       // left top
+       radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+       radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+       //  right top
+       radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+       radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+       // right bottom
+       radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+       /////// create a base coat to smooth
+       /////// corner gradients
+       linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+/* ==========================================================================
+   Project Colors
+   ========================================================================== */
+
+$body-font-color: #15110A;
+
+$white: #fff;
+$red: #FF424E;
+$grey-x-dk: #333;
+$grey-dk: #484242;
+$grey: #95989A;
+$grey-lt: rgb(200, 200, 200);
+$grey-x-lt: rgb(230, 230, 230);
+$green: #54BD9F;
+$black: #000;
+$orange: orange;
+
+$salmon: #FFA8A1;
+$pink: #D768A2;
+$blue: #1BA5B9;
+$gold: #DAB239;
+
+$border-color: $grey;
+
+$colors: (
+    white: $white,
+    black: $black,
+    red: $red,
+    green: $green,
+    grey: $grey,
+    salmon: $salmon,
+    pink: $pink,
+    blue: $blue,
+    gold: $gold
+) !default;
+
+@each $color in map-keys($colors) {
+    %bg-#{$color},
+    .bg-#{$color} {
+        background-color: map-get($colors, $color);
+    }
+
+    %fg-#{$color},
+    .fg-#{$color} {
+        color: map-get($colors, $color) !important;
+    }
+
+}

@@ -1,0 +1,28 @@
+.wrapper {
+
+    flex: 1 0 auto;
+    position: relative;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    padding-bottom: 3rem;
+
+    @include bp-menu {
+      padding-bottom: 8rem;
+    };
+
+    @include bp-lg {
+      padding-bottom: 33vh;
+    }
+
+}
+
+.outer {
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
+.waiting {
+  cursor: wait;
+  a {
+    cursor: wait;
+  }
+}

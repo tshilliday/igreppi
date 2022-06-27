@@ -1,0 +1,124 @@
+.content-block--annotated-image {
+  .c {
+    position: relative;
+  }
+  @include bp-md {
+    margin-bottom: 10rem;
+  };
+}
+
+.annotated__caption {
+  margin: 0 0 2rem 0;
+  h1, h2, h3, h4, h5 {
+    @extend %display-font;
+    @include font-size(32px);
+    line-height: (35 / 32);
+    position: relative;
+  }
+  .line {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
+  }
+}
+
+.annotated__link {
+  margin-top: 1rem;
+}
+
+@include bp-md {
+  @media screen and (max-width: 1169px) {
+    .c--image {
+      width: 100%;
+      margin: 0;
+    }
+    .c--left-caption, .c--right-caption {
+      margin-top: 2rem;
+      width: 50%;
+      .line {
+        display: none;
+      }
+    }
+
+  }
+
+};
+
+@media screen and (min-width: 1170px) {
+
+  .annotated__caption--left {
+    position: absolute;
+    top: 10%;
+    width: 28%;
+    left: -8%;
+    @include bp-lg {
+      top: 28%;
+      width: 20%;
+      left: 0;
+    };
+
+    .line {
+      top: 1rem;
+      right: -225px;
+      left: auto;
+    }
+
+  }
+
+  .annotated__caption--right {
+    position: absolute;
+    // top: 20%;
+    width: 28%;
+    right: -8%;
+    bottom: 0;
+    @include bp-lg {
+      // top: 50%;
+      width: 20%;
+      right: 0;
+    };
+  }
+
+    .line {
+      top: 1rem;
+      left: -225px;
+      right: auto;
+    }
+
+    // Terroir page
+    .page-id-114 {
+      .annotated__caption--left {
+        top: 36%;
+      }
+      .annotated__caption--right {
+        bottom: auto;
+        top: 42%;
+      }
+    }
+
+    // Our Story page
+    .page-id-46 {
+      .annotated__caption--right {
+        .line {
+          top: 3rem;
+        }
+      }
+    }
+}
+
+@include lt-bp-md {
+  .c--image {
+    margin-bottom: 2rem;
+  }
+  .c--left-caption {
+    order: -1;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1169px) {
+  .c--image {
+    width: 50%;
+    margin: 0 25%;
+  }
+}
+

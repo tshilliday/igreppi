@@ -1,0 +1,61 @@
+// components/typography
+
+$body-font-size: 17px;
+$hover-opacity: 0.6;
+
+@import 'fonts';
+
+%text-bold {
+    font-weight: bold;
+}
+
+%text-regular {
+    font-weight: normal;
+}
+
+%text-center, .text--center {
+    text-align: center;
+}
+
+%text-left, .text--left {
+    text-align: left;
+}
+
+%text-right, .text--right {
+    text-align: right;
+}
+
+%text-uppercase {
+    text-transform: uppercase;
+}
+
+html,
+body {
+
+    .wf-loading & {
+        visibility: hidden;
+    }
+    .wf-inactive & {
+        visibility: visible;
+    }
+
+    @extend %body-font;
+    font-size: $body-font-size;
+    line-height: (27 / 17);
+}
+
+@import 'mixins';
+@import 'styles';
+@import 'headings';
+@import 'p';
+@import 'ul';
+@import 'ol';
+@import 'a';
+@import 'blockquote';
+@import 'strong';
+@import 'text-column';
+
+address {
+  font-style: normal;
+  max-width: 100%;
+}

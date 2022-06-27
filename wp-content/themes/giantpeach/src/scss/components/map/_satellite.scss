@@ -1,0 +1,88 @@
+.content-block--satellite {
+
+}
+
+.satellite__container {
+    width: 100%;
+    padding-bottom: 1041.21 / 1060.26 * 100%;
+    position: relative;
+
+    // offset slightly
+    transform: translate3d(-20%,0,0);
+    @include bp-md {
+        transform: translate3d(-10%,0,0) scale(1.3);
+    }
+    @include lt-bp-md {
+      margin-top: 2rem;
+    };
+
+    .satellite {
+        position: absolute;
+        width: 100%;
+    }
+
+    .map__satellite {
+        position: absolute;
+        width: 126.11 / 1041.21 * 100%;
+        left: 447 / 1041.21 * 100%;
+        // top: 456 / 1060.26 * 100%;
+        top: 44.9%;
+    }
+
+    .map__text {
+        position: absolute;
+        opacity: 0;
+        bottom: 75%;
+        left: 69%;
+        // width: 50%;
+        transition: all 1s $ease-smooth;
+        transition-delay: 1.25s;
+        max-width: 200px;
+    }
+
+    .map__line {
+        bottom: 48%;
+        left: 52%;
+        width: 25%;
+        height: 27%;
+        transition-delay: .5s;
+        &:after {
+            transition-delay: .5s;
+        }
+    }
+
+    .map__path {
+        stroke: rgba($gold,0);
+        fill: rgba($gold,0);
+        transition: fill 1s $ease-smooth;
+    }
+
+    .map__path--top {
+        animation: none !important;
+      }
+
+    .map__path--bottom {
+        animation: none !important;
+        transition-delay: .25s;
+    }
+
+}
+
+.js-enabled .in-viewport, .no-js {
+    .satellite__container {
+
+        .map__text {
+            width: 100%;
+            opacity: 1;
+        }
+
+        .map--vineyard {
+            .map__path--top {
+                fill: $gold;
+            }
+            .map__path--bottom {
+                fill: $gold;
+            }
+        }
+    }
+}

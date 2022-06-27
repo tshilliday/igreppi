@@ -1,0 +1,136 @@
+// component/button/button
+
+.button,
+%button {
+    font-family: $body-font-family;
+    @extend %text-uppercase;
+    @include font-size(15px);
+    letter-spacing: 0.1em;
+    border-radius: 0;
+    color: $black;
+    display: inline-block;
+    line-height: (24 / 20);
+    transition: all .3s;
+    font-weight: 700;
+    padding: 0;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+    margin-bottom: 1rem;
+    &:focus, &:active {
+      outline: none;
+    }
+
+    &:after {
+        @extend %far;
+        content: "\f178";
+        display: inline-block;
+        transform: translate3d(0,0,0);
+        margin: 0 0 0 10px;
+        color: $salmon;
+        transition: transform .3s ease-in-out, color .3s ease-in-out;
+    }
+
+    &:hover {
+        opacity: 1;
+        &:after {
+            transform: translate3d(50%,0,0);
+            // animation-name: button-arrow-right;
+            // animation-timing-function: ease-out;
+            // animation-duration: .5s;
+            // animation-fill-mode: forwards;
+        }
+        color: $salmon;
+    }
+
+    &.waiting {
+        &:after {
+            content: "\f110";
+            @extend %rotate;
+        }
+        &:hover {
+            &:after {
+                @extend %rotate;
+            }
+        }
+    }
+}
+
+.button--down {
+  text-align: center;
+  &:after {
+    content: "\f175";
+    display: block;
+    margin: 10px 0 0 0;
+  }
+  &:hover {
+    &:after {
+        transform: translate3d(0,50%,0);
+    }
+  }
+}
+
+.button--alt {
+  min-width: 200px;
+  padding: 15px 20px;
+  border: 2px solid $black;
+  text-align: left;
+  &:hover, &:focus, &:active {
+    background-color: $salmon;
+    border-color: $salmon;
+    color: $white;
+    &:after {
+      color: $white;
+    }
+  }
+  &:after {
+    float: right;
+  }
+}
+
+.button--white {
+  color: $white;
+  &:after {
+    color: $white;
+  }
+  &:hover, &:focus, &:active {
+    color: $salmon;
+    &:after {
+      color: $salmon;
+    }
+  }
+}
+
+.button--big, .button--lg {
+    padding: 22px 43px;
+    @include font-size(20px);
+}
+
+.button--full-width {
+    width: 100%;
+}
+
+.button--transparent {
+    @include font-size(18px);
+    background: transparent;
+    color: $black;
+    font-style: italic;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+// @keyframes button-arrow-right {
+//   0% {
+//       transform: translate3d(0,0,0);
+//   }
+//   100% {
+//       transform: translate3d(30%,0,0);
+//   }
+// }
+
+// @keyframes button-arrow-down {
+//   0% {
+//       transform: translate3d(0,0,0);
+//   }
+//   100% {
+//       transform: translate3d(0,30%,0);
+//   }
+// }

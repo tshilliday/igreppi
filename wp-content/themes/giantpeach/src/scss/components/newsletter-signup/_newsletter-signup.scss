@@ -1,0 +1,143 @@
+// components/newsletter-signup/newsletter-signup
+
+.newsletter-signup {
+    @extend %fg-white;
+    @extend %position-relative;
+    padding: 60px 0;
+    text-align: center;
+    z-index: 0;
+
+    @include bp-md {
+        padding: 133px 0 170px;
+        text-align: left;
+    };
+
+    &::before {
+        @extend %opacity-0;
+        @extend %position-absolute;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: translateX(-100px);
+        transition: all 3s $ease-out-circ;
+        z-index: -1;
+
+        @include bp-md {
+            background-color: transparent;
+            background-image: url('../../../img/newsletter-signup-dark.svg');
+            width: 78%;
+        };
+    }
+
+    &::after {
+        @extend %opacity-0;
+        @extend %position-absolute;
+        background-image: url('../../../img/newsletter-signup-light.svg');
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        display: none;
+        right: 0;
+        top: 0;
+        transform: translateX(50px);
+        transition: all 3s $ease-out-circ .2s;
+        width: 21%;
+        z-index: -1;
+
+        @include bp-md {
+            display: block;
+        };
+    }
+
+    h2,
+    p,
+    form {
+        @extend %rotate-in-start;
+    }
+
+    p {
+        transition: all 3s $ease-out-circ .5s;
+
+        @include bp-md {
+            max-width: 514px;
+        };
+    }
+
+    form {
+        transition: all 3s $ease-out-circ .7s;
+    }
+
+    input {
+        border: 3px solid $green;
+        height: 65px;
+        padding-left: 15px;
+
+        @include bp-md {
+            border-right: 0;
+        };
+    }
+
+    button {
+        @include bp-md {
+            max-width: 153px;
+        };
+    }
+
+    &.is-visible {
+        &::after,
+        &::before {
+            @extend %opacity-1;
+            transform: translateX(0);
+        }
+
+        h2,
+        p,
+        form {
+            @extend %rotate-in-end;
+        }
+    }
+}
+
+
+.newsletter-signup__triangle-1,
+.newsletter-signup__triangle-2 {
+    @extend %position-absolute;
+    display: none;
+
+    @include bp-md {
+        display: block;
+    };
+}
+
+.newsletter-signup__triangle-1 {
+    background: url('../../../img/newsletter-signup-triangle.svg');
+    height: 38%;
+    max-height: 184px;
+    max-width: 218px;
+    min-height: 184px;
+    min-width: 218px;
+    right: 19%;
+    top: 5%;
+    transform: translateX(50%);
+    width: 15%;
+}
+
+.newsletter-signup__triangle-2 {
+    background: url('../../../img/newsletter-signup-triangle-2.svg');
+    bottom: 0;
+    height: 22%;
+    max-height: 117px;
+    max-width: 117px;
+    min-height: 117px;
+    min-width: 117px;
+    right: 19%;
+    transform: translateX(0%) translateY(30%);
+    width: 10%;
+}

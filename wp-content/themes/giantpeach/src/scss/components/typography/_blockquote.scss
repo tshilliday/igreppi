@@ -1,0 +1,33 @@
+// components/typography/blockquote
+
+blockquote, .blockquote, %blockquote {
+    @extend %text-center;
+    @include font-size(45px);
+    line-height: (55 / 45);
+    @extend %display-font;
+    margin: 3rem auto;
+    max-width: 800px;
+
+    > p {
+        @extend %display-font;
+        color: $black;
+    }
+
+    @include lt-bp-md {
+      @include font-size(26px);
+    };
+
+    footer {
+        @extend %body-font;
+        @include font-size(17px);
+        line-height: (27 / 17);
+        font-style: normal;
+        text-transform: none;
+        font-family: $header-font-family;
+    }
+
+    cite {
+      @extend %body-font;
+      font-style: normal;
+    }
+}

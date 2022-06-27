@@ -1,0 +1,40 @@
+/* Grid Variables */
+
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+   $breakpoints: ( /* Media query breakpoints in PX */
+   xxs: 0,
+   xs: 480,
+   s: 700,
+   sm: 800,
+   md: 1024,
+   lg: 1280,
+   xl: 1400,
+   xxl: 1600,
+   xxxl: 2100
+) !default;
+
+/* ==========================================================================
+  Setting up the grid
+  ========================================================================== */
+$spacing: 30; /* Gutter spacing in PX */
+$spacingPx: $spacing * 1px;
+$columns: 12; /* Number of columns */
+
+/* Column Width */
+$colwidth: ((map-get($breakpoints, lg) / $columns)) / map-get($breakpoints, lg) * 100;
+
+$containers: ( /* Container Widths in PX */
+   xxs: 0,
+   xs: 480,
+   s: 690,
+   sm: 720,
+   md: 940,
+   lg: 1100,
+   xl: 1240,
+   xxl: 1330,
+   xxxl: 1330
+) !default;
+
+$bp-menu: 1024;

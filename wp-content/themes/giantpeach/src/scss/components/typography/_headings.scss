@@ -1,0 +1,84 @@
+.caption,
+h1,
+.h1,
+%h1 {
+    @extend %header-font;
+    @include font-size(125px);
+    line-height: (120 / 125);
+
+    @media screen and (max-width: 1600px) {
+      @include font-size(95px);
+    };
+
+    @include lt-bp-lg {
+      @include font-size(60px);
+    };
+
+    @include lt-bp-sm {
+      line-height: 1.1;
+      @include font-size(46px);
+    };
+}
+
+h2,
+.h2,
+%h2 {
+    @extend %header-font;
+    @include font-size(95px);
+    color: $blue;
+    line-height: (85 / 95);
+
+    @include lt-bp-lg {
+      @include font-size(48px);
+    };
+
+    @include lt-bp-sm {
+      line-height: 1.1;
+      @include font-size(34px);
+    };
+}
+
+h3,
+.h3,
+%h3 {
+    @extend %header-font;
+    @include font-size(65px);
+    line-height: (70 / 65);
+    color: $gold;
+
+    @include lt-bp-md {
+      @include font-size(30px);
+    };
+
+    &.display {
+      @extend %display-font;
+      @include font-size(32px);
+    }
+}
+
+h4,
+.h4,
+%h4 {
+    @extend %header-font;
+    font-weight: 400;
+    @include font-size(32px);
+    line-height: (38 / 32);
+
+    @include lt-bp-md {
+      @include font-size(26px);
+    };
+}
+
+h5,
+.h5,
+%h5 {
+    @extend %body-font;
+    @include font-size(17px);
+    font-weight: 700;
+    line-height: (27 / 17);
+    margin-bottom: 1rem;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  max-width: 100%;
+}

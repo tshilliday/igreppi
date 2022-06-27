@@ -1,0 +1,37 @@
+.post__cats {
+    .post__cats--list {
+        padding-bottom: 25px;
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            padding-left: 0px;
+            padding-right: 50px;
+            &::before {
+                content: none;
+            }
+        }
+
+        a {
+            @extend %header-font;
+            font-size: 32px;
+            font-weight: 400;
+
+            &.active, &:hover {
+                color: $salmon;
+            }
+        }
+    }
+}
+
+.c--cat {
+    margin-top: 200px;
+}
+
+.post__item-categories {
+  a:hover {
+    color: $salmon;
+  }
+}

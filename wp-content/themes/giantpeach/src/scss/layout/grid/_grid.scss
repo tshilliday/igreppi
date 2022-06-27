@@ -1,0 +1,189 @@
+/**
+ * Description: Giant Peach Grid SCSS
+ * Version: 1.0.2
+ * Author: Giant Peach
+ * Changelog 1.0.2:
+ * - Added option to use floats instead of flexbox
+ * Changelog 1.0.1:
+ * - Added shorthand classes
+ */
+
+ @import 'variables';
+ @import 'mixins';
+
+ $flex: true;
+
+ .l-grid-container, .l-c, .c {
+     padding: 0 $spacing / 2 + px;
+     margin: 0 auto;
+
+     @each $b in map-keys($breakpoints) {
+         @if ($b == xxs) {
+
+         } @else {
+             @media (min-width: map-get($breakpoints, $b) + px) {
+                 width: map-get($containers, $b) + px;
+             }
+         }
+     }
+ }
+
+ .l-c--f,
+ .c--f {
+     margin: 0 auto;
+     padding: 0 $spacing / 2 + px;
+ }
+
+ @if ($flex == true) {
+     .l-grid-row, .l-r, .r {
+         display: flex;
+         flex-wrap: wrap;
+         margin-right: -($spacing / 2) + px;
+         margin-left: -($spacing / 2) + px;
+     }
+     %l-grid-column-globals {
+         padding: 0 ($spacing / 2) + px;
+     }
+ } @else {
+     .l-grid-container, .l-c, .c {
+         &:before {
+             display: table;
+             content: ' ';
+         }
+         &:after {
+             display: table;
+             clear: both;
+             content: '';
+         }
+     }
+     .l-grid-row, .l-r, .r {
+         margin-right: -($spacing / 2) + px;
+         margin-left: -($spacing / 2) + px;
+         &:before {
+             display: table;
+             content: ' ';
+         }
+         &:after {
+             display: table;
+             clear: both;
+             content: '';
+         }
+     }
+     %l-grid-column-globals {
+         float: left;
+         padding: 0 ($spacing / 2) + px;
+     }
+ }
+
+ %l-grid-100 {
+     width: 100%;
+ }
+
+ @each $b in map-keys($breakpoints) {
+     @if $b == xxs {
+         @for $i from 1 through $columns {
+             .l-grid-col-#{$b}-#{$i}, .l-c-#{$b}-#{$i}, .c-#{$b}-#{$i} {
+                 @extend %l-grid-column-globals;
+                 width: $colwidth * $i * 1%;
+             }
+         }
+     } @else {
+         @for $i from 1 through $columns {
+             .l-grid-col-#{$b}-#{$i}, .l-c-#{$b}-#{$i}, .c-#{$b}-#{$i} {
+                 @extend %l-grid-column-globals;
+                 @extend %l-grid-100;
+             }
+         }
+     }
+ }
+
+ @mixin grid-columns() {
+     @each $b in map-keys($breakpoints) {
+         @media (min-width: map-get($breakpoints, $b) + px) {
+             @for $i from 1 through $columns {
+                 .l-grid-col-#{$b}-#{$i}, .l-c-#{$b}-#{$i}, .c-#{$b}-#{$i} {
+                     // @extend %grid-column-styles;
+                     $percentage: $colwidth * $i;
+                     // width: calc(#{$percentage}% - #{$spacing}px);
+                     // margin-bottom: 15px;
+                     width: $colwidth * $i * 1%;
+                     padding: 0 ($spacing / 2) + px;
+
+                 }
+             }
+         }
+     }
+ }
+
+ @mixin grid-offsets() {
+     @each $b in map-keys($breakpoints) {
+         @media (min-width: map-get($breakpoints, $b) + px) {
+             @for $i from 0 through $columns {
+                 .l-grid-col-#{$b}-offset-#{$i}, .l-c-#{$b}-o-#{$i}, .c-#{$b}-o-#{$i} {
+                     $percentage: $colwidth * $i;
+                     margin-left: $colwidth * $i * 1%;
+                 }
+             }
+         }
+     }
+ }
+
+ .c-xs-or-1 {
+     order: -1;
+ }
+
+ .c-sm-or-1 {
+     @include bp-sm {
+         order: -1;
+     };
+ }
+
+ .c-md-or-1 {
+     @include bp-md {
+         order: -1;
+     };
+ }
+
+ .c-lg-or-1 {
+     @include bp-lg {
+         order: -1;
+     };
+ }
+
+ .c-xl-or-1 {
+     @include bp-xl {
+         order: -1;
+     };
+ }
+
+ .c-equal-height {
+     display: flex;
+     //flex-direction: column;
+
+     > .inner {
+         display: flex;
+         width: 100%;
+
+         > * {
+             display: flex;
+             flex-direction: column;
+             width: 100%;
+         }
+     }
+ }
+
+ .c-vertical-center {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+ }
+
+ .c-vertical-bottom {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+ }
+
+ @include grid-columns;
+ @include grid-offsets;

@@ -1,0 +1,221 @@
+.content-block--posts {
+    margin: 8rem 0 0 0;
+}
+
+.r--posts {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% + 2rem);
+    top: 0;
+    left: 0;
+    transform: translate3d(0,-4rem,0);
+    background-color: rgba($white,1);
+    opacity: 0;
+    transition: opacity .5s $ease-smooth;
+  }
+  &.waiting {
+    cursor: wait;
+    &:after {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity .5s $ease-smooth, z-index 0 linear .5s;
+    }
+  }
+}
+
+.post__item-meta {
+    width: 75%;
+    position: relative;
+    padding: 2rem 2rem 0 0;
+    transform: translate3d(0,-4rem,0);
+    margin-bottom: -2rem;
+    transition: all .3s $ease-smooth;
+
+    &:after {
+        transition: all .3s $ease-smooth;
+        content: "";
+        display: block;
+        background: $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    a.read-more {
+        @extend %button;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 700 !important;
+        letter-spacing: 0.1rem;
+
+        // &::after {
+        //     @extend %far;
+        //     content: "\f178";
+        //     font-weight: 100;
+        //     color: $salmon;
+        //     padding-left: 10px;
+        // }
+    }
+}
+
+.post__item-categories {
+  @extend %ul-no-style;
+  color: $grey;
+  margin-bottom: 1rem;
+  a {
+    @include font-size(15px);
+    color: $grey;
+  }
+}
+
+.post__item {
+    padding-bottom: 3rem;
+
+    @include lt-bp-sm {
+      padding-bottom: 2rem;
+    }
+
+    a {
+        font-weight: 400;
+    }
+
+    @include scale-up-image-on-hover;
+
+    // there is a weird black border-right on the img, this fixes it?
+    img {
+        left: 1px;
+    }
+
+    .post__item-meta {
+      &:after {
+        transform-origin: bottom left;
+      }
+    }
+
+    &:hover {
+
+        .post__item-meta {
+            &:after {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
+
+.post__item-title a:hover {
+  color: $salmon;
+}
+
+#post_navigation {
+    position: relative;
+
+    a {
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3rem;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    i {
+        color: $salmon;
+
+        &.fa-spinner {
+            display: none;
+        }
+
+    }
+
+    &.waiting {
+        .fa-spinner {
+            display: block;
+        }
+        .fa-long-arrow-down {
+            display: none;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+@include bp-sm {
+  .content-block--posts {
+    .r {
+      > *:nth-child(2n + 1) {
+        transform: translate3d(0,-4rem,0);
+        .post__item {
+          margin-right: 1rem;
+        }
+      }
+      > *:nth-child(2n) {
+        .post__item {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .content-block__heading {
+      text-align: right;
+      padding-left: 50%;
+    }
+  }
+};
+
+@include lt-bp-sm {
+  .post__item {
+    padding-bottom: 0;
+    .post__item-meta {
+      text-align: center;
+      width: 87%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 2rem 0 2rem;
+      &:after {
+        transform-origin: bottom center;
+      }
+    }
+  }
+};
+
+@include lt-bp-xs {
+  .post__item {
+    // padding-bottom: 0;
+    .post__item-meta {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem 1rem 0 1rem;
+    }
+    &:hover {
+      .post__item-meta {
+        &:after {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+};

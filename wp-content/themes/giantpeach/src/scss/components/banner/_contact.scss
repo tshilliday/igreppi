@@ -1,0 +1,305 @@
+.contact__banner-wrapper {
+  position: relative;
+}
+
+$banner_height: 1000;
+$banner_width: 1600;
+
+.banner--contact {
+    position: relative;
+
+    // padding-top: 6rem;
+    // padding-bottom: 6rem;
+
+    // @include bp-menu {
+      padding-bottom: $banner_height / $banner_width * 100%;
+      padding-top: 0;
+    // }
+
+
+  .map__text {
+    // display: none;
+    // @include bp-menu {
+    //   display: block;
+    // }
+    position: absolute;
+    top: 30%;
+    right: 38%;
+  }
+
+  .map__line {
+    // display: none;
+    // @include bp-menu {
+    //   display: block;
+    // }
+    bottom: 53%;
+    right: 30.5%;
+    width: 10%;
+    height: 12%;
+    @include bp-xl {
+      height: 13%;
+    }
+    transition-delay: .5s;
+    &:after {
+        transition-delay: .5s;
+    }
+  }
+
+  .map__line--elba {
+    position: absolute;
+    top: 57%;
+    left: 65%;
+    width: 3%;
+    height: 10%;
+
+    &.sweep-forward, &.sweep-backward {
+      &:after {
+        background-image: url('../../../img/sweep-straight.svg');
+      }
+    }
+  }
+
+  .map__text--elba {
+    bottom: auto;
+    right: auto;
+    top: 68%;
+    left: 64%;
+  }
+
+}
+
+.map--italy {
+  // display: none;
+  // @include bp-menu {
+  //   display: block;
+  // }
+  // @include lt-bp-menu {
+  //   position: absolute;
+  //   // top: -85%;
+  //   top: -20%;
+  //   left: 0;
+  //   width: 220%;
+
+  //   @include bp-xs {
+  //     // top: 0;
+  //     top: -536.18 / $banner_height * 100%;
+  //   };
+
+  //   @include bp-sm {
+  //     top: -101%;
+  //   };
+
+  //   @media screen and (min-width: 720px) {
+  //     top: -90%;
+  //   }
+
+  //   #italy-label,
+  //   #tuscany-label,
+  //   #florence-dot,
+  //   #florence-label {
+  //     display: none;
+  //   }
+  // };
+  position: absolute;
+  top: -536.18 / $banner_height * 100%;
+  left: 385 / $banner_width * 100%;
+  width: 2258.15 / $banner_width * 100%;
+
+}
+
+.map--italy {
+  #tuscany {
+    stroke: $blue;
+    stroke-width: 4;
+    fill: rgba($white, 100);
+    animation: fill-tuscany 2s $ease-smooth forwards;
+  }
+  #bolgheri {
+    stroke: none;
+    fill: rgba($salmon, 0);
+    animation: fill-bolgheri 3s $ease-smooth 1s forwards;
+  }
+
+}
+
+// .wave {
+//   animation: fade-in 2s alternate infinite;
+//   &:nth-child(odd) {
+//     animation-delay: 0.5s;
+//   }
+//   &:nth-child(3n) {
+//     animation-delay: 1.2s;
+//   }
+//   &:nth-child(4n) {
+//     animation-delay: 1.5s;
+//   }
+// }
+
+.wave {
+  // display: none;
+  // @include bp-menu {
+  //   display: block;
+  // };
+  opacity: 0;
+  animation: fade-in 2s forwards;
+  &:nth-child(odd) {
+    animation-delay: 0.5s;
+  }
+  &:nth-child(3n) {
+    animation-delay: 1.2s;
+  }
+  &:nth-child(4n) {
+    animation-delay: 1.5s;
+  }
+}
+
+#wave-ico-8, #wave-ico-4, #wave-ico-12 {
+  // overlaps text
+  // @include lt-bp-lg {
+  //   display: none;
+  // }
+}
+
+@keyframes fill-tuscany {
+  to {
+    fill: rgba($blue, 100);
+  }
+}
+
+@keyframes fill-bolgheri {
+  to {
+    fill: rgba($salmon, 100);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include lt-bp-xs {
+
+  .banner--contact {
+    padding-bottom: 225%;
+
+    .map__line {
+      bottom: 44%;
+      right: 39.5%;
+      width: 13%;
+      height: 11%;
+    }
+
+    .map__text {
+      top: 40%;
+    }
+
+    .map__text--elba {
+      left: 41%;
+      top: 78%;
+      font-size: 1.3rem;
+    }
+
+    .map__line--elba {
+      top: 66%;
+      left: 45%;
+      width: 8%;
+      height: 11%;
+    }
+
+  }
+
+  .map--italy {
+    top: -44%;
+    left: -102%;
+    width: 505%;
+  }
+
+};
+
+@include bp-xs {
+  @include lt-bp-md {
+
+    .banner--contact {
+      padding-bottom: 103%;
+
+      .map__line {
+        bottom: 44%;
+        right: 36.5%;
+        width: 20%;
+        height: 15%;
+      }
+
+      .map__text {
+        top: 36%;
+        right: 49%;
+      }
+
+      .map__text--elba {
+        left: 59%;
+        top: 82%;
+        font-size: 1.3rem;
+      }
+
+      .map__line--elba {
+        top: 70%;
+        left: 53%;
+        width: 8%;
+        height: 11%;
+      }
+
+    }
+
+    .map--italy {
+      top: -68%;
+      left: -29%;
+      width: 289%;
+    }
+
+  };
+
+};
+
+@include lt-bp-lg {
+  .banner--contact {
+    .banner__caption {
+      max-width: 350px;
+    }
+  }
+};
+
+@include bp-md {
+  @include lt-bp-lg {
+    .banner--contact {
+      padding-bottom: 75.5%;
+      .map--italy {
+        position: absolute;
+        top: -35.618%;
+        left: 24.0625%;
+        width: 141.13438%;
+      }
+    }
+  };
+};
+
+body.ie {
+  .banner--contact {
+    svg.map--italy {
+      width: 120vw;
+      height: 160vw;
+      top: -40vw;
+      left: 30vw;
+    }
+
+    #tuscany {
+      fill: $blue;
+    }
+
+    #bolgheri {
+      fill: $salmon;
+    }
+  }
+}

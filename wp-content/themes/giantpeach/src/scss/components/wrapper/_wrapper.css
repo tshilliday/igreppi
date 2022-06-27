@@ -1,0 +1,7 @@
+.wrapper {
+  flex: 1 0 auto;
+  position: relative;
+  margin-bottom: 3rem;
+  overflow-x: hidden;
+  padding-bottom: 8rem;
+}

@@ -1,0 +1,44 @@
+.banner--gold {
+    .banner__image {
+        &:after {
+        content: "";
+        background-image: linear-gradient(45deg, $gold, rgba(0,0,0,0) 100%);
+        }
+    }
+}
+
+.banner--pink {
+    .banner__image {
+        &:after {
+        content: "";
+        background-image: linear-gradient(45deg, $salmon, rgba(0,0,0,0) 100%);
+        }
+    }
+}
+
+.banner--blue {
+    .banner__image {
+        &:after {
+        content: "";
+        background-image: linear-gradient(45deg, $blue, rgba(0,0,0,0) 100%);
+        }
+    }
+}
+
+.banner--blue-pink {
+    .banner__image {
+        &:after {
+        content: "";
+        background-image: linear-gradient(45deg, $blue, rgba($pink,.1) 100%);
+        }
+    }
+}
+
+.banner--gold-pink {
+    .banner__image {
+        &:after {
+        content: "";
+        background-image: linear-gradient(45deg, $gold, rgba($pink,.59) 100%);
+        }
+    }
+}

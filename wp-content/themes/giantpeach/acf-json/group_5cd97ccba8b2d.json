@@ -1,0 +1,102 @@
+{
+    "key": "group_5cd97ccba8b2d",
+    "title": "Category Image",
+    "fields": [
+        {
+            "key": "field_5cd97cd1f7f09",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Recommended image size is 1920 x 1225px pixels",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5cd97de278add",
+            "label": "Overlay Colour",
+            "name": "banner_overlay_colour",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "blue": "Blue to transparent",
+                "gold": "Gold to transparent",
+                "pink": "Pink to transparent",
+                "gold-pink": "Gold to pink (with transparency)",
+                "blue-pink": "Blue to pink (with transparency)"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cd97e56a572a",
+            "label": "Shape",
+            "name": "banner_shape",
+            "type": "radio",
+            "instructions": "This dictates the white shapes on the banners",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No Shapes",
+                "style-1": "Style 1",
+                "style-2": "Style 2"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1557757623
+}

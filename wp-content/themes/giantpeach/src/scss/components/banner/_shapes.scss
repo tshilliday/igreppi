@@ -1,0 +1,49 @@
+.banner--style-1 {
+    position: relative;
+    @include lt-bp-menu {
+        .banner__text {
+            &:before {
+            @include curve-top-left('../../../img/mobile-edge-1.svg', 100, 306, 25.15);
+            transform: rotate(180deg);
+            position: relative;
+            }
+            &:after {
+            @include curve-bottom-right('../../../img/mobile-edge-2.svg', 100, 306, 19.16);
+            position: relative;
+            }
+        }
+    }
+    @include bp-menu  {
+        &:before {
+            @include curve-top-left('../../../img/banner-style-1-top.svg', 25, 166.72, 115.7);
+        }
+        &:after {
+            @include curve-bottom-right('../../../img/banner-style-1-bottom.svg', 100, 570, 224.73);
+        }
+    }
+}
+
+.banner--style-2 {
+    position: relative;
+    @include lt-bp-menu {
+        .banner__text {
+          &:before {
+            @include curve-top-left('../../../img/mobile-edge-3.svg', 100, 306, 23.22);
+            transform: rotate(180deg);
+            position: relative;
+          }
+          &:after {
+            @include curve-bottom-right('../../../img/mobile-edge-4.svg', 100, 306, 30.56);
+            position: relative;
+          }
+        }
+    }
+    @include bp-menu {
+        &:before {
+            @include curve-top-left('../../../img/banner-style-2-top.svg', 100, 570, 223.6);
+        }
+        &:after {
+            @include curve-bottom-right('../../../img/banner-style-2-bottom.svg', 100, 570, 148.91);
+        }
+    }
+}

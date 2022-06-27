@@ -1,0 +1,154 @@
+@media screen {
+
+    .js-enabled {
+
+        .in-viewport.fromTop,
+        .in-viewport .fromTop 
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: translate3d(0,0,0);
+            opacity: 1.0;
+        }
+
+        .fromTop
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: translate3d(0,-10px,0);
+            opacity: 0.0;
+        }
+
+        .in-viewport.fromBottom,
+        .in-viewport .fromBottom 
+        {
+            transition: transform 1.2s ease, opacity 1.2s ease;
+            
+            transform: translate3d(0,0,0);
+            opacity: 1.0;
+        }
+
+        .fromBottom
+        {
+            transition: transform 1.2s ease, opacity 1.2s ease;
+            
+            transform: translate3d(0,20px,0);
+            opacity: 0.0;
+        }
+
+        .in-viewport.fromLeft,
+        .in-viewport .fromLeft 
+        {
+            transition: transform 1s ease, opacity 1s ease;
+            
+            opacity: 1.0;
+
+            @include bp-md {
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        .fromLeft
+        {
+            transition: transform 1s ease, opacity 1s ease;
+            
+            opacity: 0.0;
+
+            @include bp-md {
+                transform: translate3d(-20px,0,0);
+            }
+        }
+
+        .in-viewport.fromLeftNoFade,
+        .in-viewport .fromLeftNoFade 
+        {
+            transition: transform 1s ease;
+            
+            @include bp-md {
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        .fromLeftNoFade
+        {
+            transition: transform 1s ease;
+
+            @include bp-md {
+                transform: translate3d(-20px,0,0);
+            }
+        }
+
+        .in-viewport.fromRight,
+        .in-viewport .fromRight 
+        {
+            transition: transform 1s ease, opacity 1s ease;
+            
+            opacity: 1.0;
+
+            @include bp-md {
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        .fromRight
+        {
+            transition: transform 1s ease, opacity 1s ease;
+            
+            opacity: 0.0;
+
+            @include bp-md {
+                transform: translate3d(20px,0,0);
+            }
+        }
+
+        .in-viewport.scaleUp
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: scale(1.0,1.0);
+            opacity: 1.0;
+        }
+
+        .scaleUp
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: scale(1.3,1.3);
+            opacity: 0.0;
+        }
+
+        .in-viewport.scaleDown
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: scale(1.0,1.0);
+            opacity: 1.0;
+        }
+
+        .scaleDown
+        {
+            transition: transform 1.0s ease, opacity 1.0s ease;
+            
+            transform: scale(0.7,0.7);
+            opacity: 0.0;
+        }
+
+        .in-viewport.fade,
+        .in-viewport .fade
+        {
+            transition: opacity 1.0s ease;
+            
+            opacity: 1.0;
+        }
+
+        .fade
+        {
+            transition: opacity 1.0s ease;
+            
+            opacity: 0.0;
+        }
+
+    }
+
+}
+

@@ -1,0 +1,227 @@
+$feed_width: 1600;
+$feed_height: 1022;
+
+.content-block--instagram {
+  @include bp-md {
+    .c {
+      width: 100% !important;
+      padding: 0 !important;
+      max-width: 1600px !important;
+    }
+  };
+  margin-top: 5rem;
+}
+
+.content-block--annotated-image {
+  + .content-block--instagram {
+    @include bp-md {
+      margin-top: 10rem;
+    };
+  }
+}
+
+.sbi_header_img {
+  display: none;
+}
+
+#sb_instagram, .instagram {
+  max-width: 100% !important;
+  position: relative;
+
+  .sb_instagram_header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include bp-md {
+      display: block;
+      margin-bottom: 0;
+      text-align: left;
+      position: absolute;
+      top: 450 / $feed_height * 100%;
+      left: 1031 / $feed_width * 100%;
+      transform: translate3d(0,-50%,0);
+      z-index: 2;
+    };
+  }
+
+  .sbi_header_text {
+    h3 {
+      @include font-size(24px);
+      @include bp-lg {
+        @include font-size(36px);
+      };
+      @include bp-xl {
+        @include font-size(48px);
+      };
+      transition: color .3s $ease-smooth;
+      margin: 0 !important;
+      color: $black;
+      &:before {
+        @extend %small-caps;
+        color: $grey;
+        content: "Follow us";
+        display: block;
+      }
+      &:after {
+        content: "@";
+        float: left;
+      }
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+	#sbi_images, .instagram_images {
+		position: relative;
+    overflow: hidden;
+
+    a:hover {
+      opacity: 1;
+    }
+
+    // padding to allow for the transform of items at -25% and -50%;
+    padding-top: 6rem;
+    @include bp-sm {
+      padding-top: 4rem;
+    };
+    @include bp-md {
+      padding-top: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        padding-top: $feed_height / $feed_width * 100%;
+      }
+    };
+
+    .sbi_item, .instagram_item {
+
+      padding: 0 !important;
+      width: 48% !important;
+      margin: 1% !important;
+
+      @include lt-bp-sm {
+        &:nth-child(2n + 1) {
+          transform: translate3d(0,-50%,0);
+        }
+      };
+
+      @include bp-sm {
+        @include lt-bp-md {
+          width: 31% !important;
+          margin: 1% !important;
+          &:nth-child(3n + 1) {
+            transform: translate3d(0,-25%,0);;
+          }
+          &:nth-child(3n + 3) {
+            transform: translate3d(0,-25%,0);;
+          }
+        }
+      }
+
+      @include bp-md {
+
+        transform: none;
+        margin: 0 !important;
+
+        position: absolute;
+        &:nth-child(1) {
+          top: 0 / $feed_height * 100%;
+          left: 180 / $feed_width * 100%;
+          width: 505 / $feed_width * 100% !important;
+        }
+
+        &:nth-child(2) {
+          top: 57 / $feed_height * 100%;
+          left: 915 / $feed_width * 100%;
+          width: 310 / $feed_width * 100% !important;
+        }
+
+        &:nth-child(3) {
+          top: 616 / $feed_height * 100%;
+          left: 0 / $feed_width * 100%;
+          width: 285 / $feed_width * 100% !important;
+        }
+
+        &:nth-child(4) {
+          top: 650 / $feed_height * 100%;
+          left: 405 / $feed_width * 100%;
+          width: 240 / $feed_width * 100% !important;
+        }
+
+        &:nth-child(5) {
+          top: 528 / $feed_height * 100%;
+          left: 729 / $feed_width * 100%;
+          width: 500 / $feed_width * 100% !important;
+        }
+
+        &:nth-child(6) {
+          top: 570 / $feed_height * 100%;
+          left: 1334 / $feed_width * 100%;
+          width: 266 / $feed_width * 100% !important;
+        }
+      };
+
+
+    }
+
+    .sbi_photo_wrap {
+      overflow: hidden;
+      a {
+        transition: transform 1s ease-out;
+      }
+      &:hover {
+        a {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .sbi_photo {
+      height: auto !important;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+    }
+
+  }
+
+}
+
+
+
+@include bp-md {
+  #sb_instagram #sbi_images {
+
+    .sbi_item, .sbi_header_text {
+      opacity: 0;
+      transition: transform 1s ease, opacity 2s ease;
+    }
+
+    .sbi_item {
+      transform: translate3d(-20px,0,0);
+      &:nth-child(2n) {
+        transform: translate3d(20px,0,0);
+      }
+    }
+
+    .sbi_header_text {
+      transform: translate3d(20px,0,0);
+    }
+
+  }
+  .in-viewport {
+    #sb_instagram #sbi_images  {
+      .sbi_item, .sbi_header_text {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+      }
+    }
+  }
+
+}

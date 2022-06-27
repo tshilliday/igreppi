@@ -1,0 +1,15 @@
+// components/forms/button
+
+button,
+input[type='submit'] {
+    @extend %button;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+form {
+    button {
+        margin-bottom: 0;
+    }
+}

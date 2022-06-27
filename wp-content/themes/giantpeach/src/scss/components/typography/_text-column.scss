@@ -1,0 +1,14 @@
+@include bp-md {
+    .text-column {
+        text-align: left;
+        column-gap: $spacingPx;
+
+        >:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .text-column--2 {
+        column-count: 2;
+    }
+}

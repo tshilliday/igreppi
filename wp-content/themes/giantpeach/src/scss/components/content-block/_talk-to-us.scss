@@ -1,0 +1,64 @@
+.content-block--talk-to-us {
+    h3 {
+        @extend %h4;
+        color: $salmon;
+    }
+}
+
+.talk-to-us__links {
+    @extend %ul-no-style;
+
+    @include lt-bp-md {
+        margin: 1rem 0;
+    }
+
+    .telephone, .email {
+        &:before {
+            color: $black;
+            font-weight: 700;
+        }
+    }
+
+    .telephone {
+        &:before {
+            content: "t: ";
+        }
+    }
+
+    .email {
+        &:before {
+            content: "e: ";
+        }
+    }
+
+    a {
+        @extend %text-regular;
+        &:hover {
+            color: $salmon;
+        }
+    }
+}
+
+.talk-to-us__social {
+    @extend %flex;
+    @extend %flex-justify-space-between;
+    @extend %flex-wrap;
+    @extend %flex-align-center;
+    align-self: stretch;
+    width: 100%;
+    margin: 1rem 0;
+
+    @include bp-md {
+        &:before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100%;
+            background-color: $salmon;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate3d(-2rem,0,0);
+        }
+    }
+}

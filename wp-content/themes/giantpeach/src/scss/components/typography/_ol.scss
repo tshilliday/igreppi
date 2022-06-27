@@ -1,0 +1,5 @@
+ol {
+    .content & {
+        @extend %text-left;
+    }
+ }

@@ -1,0 +1,17 @@
+@import 'list';
+
+.single-post {
+    .content-block--full-width-content, .content-block--latest-news {
+        margin: 5rem 0;
+    }
+
+    .post__signup {
+        margin-top: 100px;
+    }
+
+    .post__related {
+        .post__item {
+            padding-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Social Networks
+   ========================================================================== */
+/* ==========================================================================
+   Project Colors
+   ========================================================================== */
+
+.bg-white {
+  background-color: #fff;
+}
+
+
+.fg-white {
+  color: #fff !important;
+}
+
+
+.bg-black {
+  background-color: #000;
+}
+
+
+.fg-black {
+  color: #000 !important;
+}
+
+
+.bg-red {
+  background-color: #FF424E;
+}
+
+
+.fg-red {
+  color: #FF424E !important;
+}
+
+
+.bg-green {
+  background-color: #54BD9F;
+}
+
+
+.fg-green {
+  color: #54BD9F !important;
+}
+
+
+.bg-grey {
+  background-color: #95989A;
+}
+
+
+.fg-grey {
+  color: #95989A !important;
+}
+
+
+.bg-salmon {
+  background-color: #FFA8A1;
+}
+
+
+.fg-salmon {
+  color: #FFA8A1 !important;
+}
+
+
+.bg-pink {
+  background-color: #D768A2;
+}
+
+
+.fg-pink {
+  color: #D768A2 !important;
+}
+
+
+.bg-blue {
+  background-color: #1BA5B9;
+}
+
+
+.fg-blue {
+  color: #1BA5B9 !important;
+}
+
+
+.bg-gold {
+  background-color: #DAB239;
+}
+
+
+.fg-gold {
+  color: #DAB239 !important;
+}

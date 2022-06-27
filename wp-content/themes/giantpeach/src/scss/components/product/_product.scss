@@ -1,0 +1,272 @@
+.product__excerpt {
+  p {
+    @extend %h3;
+  }
+}
+
+.product__image {
+  margin-bottom: 2rem;
+  @include bp-xs {
+    width: 60%;
+    margin: 0 auto;
+  }
+  @include bp-sm {
+    width: 50%;
+    margin: 0 auto 0 0;
+  };
+  @include bp-md {
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+
+@include bp-sm {
+  @include lt-bp-md {
+    .product__notes  {
+      width: 50%;
+      position: absolute;
+      top: 20%;
+      right: 0;
+    }
+  }
+};
+
+.product__note {
+  // @extend %text-center;
+  width: 100%;
+  margin-bottom: 3rem;
+  .product__note-heading {
+    position: relative;
+  }
+  @include bp-xs {
+    text-align: center;
+    width: 70%;
+    margin: 0 15% 3rem;
+  }
+  @include bp-sm {
+    text-align: left;
+    margin-bottom: 3rem;
+
+    @include lt-bp-md {
+      &.product__note--tasting {
+        top: 20%;
+        right: 0;
+      }
+
+      &.product__note--aging {
+        top: 45%;
+        right: 0;
+      }
+
+      &.product__note--composition {
+        top: 70%;
+        right: 0;
+      }
+    };
+
+  }
+  @include bp-md {
+    position: absolute;
+    width: 33%;
+    max-width: 270px;
+    margin: 0;
+
+    &.product__note--tasting {
+      top: 20%;
+      left: 0;
+    }
+
+    &.product__note--aging {
+      top: 45%;
+      right: 0;
+    }
+
+    &.product__note--composition {
+      top: 70%;
+      left: 0;
+    }
+  }
+}
+
+.product__note {
+  .line {
+    display: none;
+    position: absolute;
+    @include bp-md {
+      display: block;
+      width: 150px;
+      top: 1rem;
+      left: -175px;
+    }
+  }
+}
+
+@include bp-sm {
+
+  @include lt-bp-md {
+    // ipad portrait only
+
+    .product__note {
+      .product__note-heading:before, .product__note-heading:after {
+        position: absolute;
+        display: inline-block;
+        top: 0.5em;
+      }
+    }
+
+    .product__note {
+      .product__note-heading:before {
+          @include stroke(60px);
+          transform: translate3d(calc(-100% - 2rem),0,0);
+        }
+      }
+  };
+}
+
+@include bp-md {
+  .product__note--tasting, .product__note--composition {
+    .line {
+      width: 250px;
+      left: 80%;
+      top: 1rem;
+    }
+  }
+  .product__note--composition {
+    .line {
+      width: 200px;
+    }
+  }
+}
+
+//   @include bp-md {
+//     // ipad landscape and up
+//     .product__note--tasting {
+//       .product__note-heading:after {
+//           @include stroke(218px);
+//           transform: translate3d(calc(2rem),0,0);
+//       }
+//     }
+//     .product__note--aging {
+//       .product__note-heading:before {
+//           @include stroke(100px);
+//           transform: translate3d(calc(-100% - 2rem),0,0) rotate(180deg) ;
+//       }
+//     }
+
+//     .product__note--composition {
+//       .product__note-heading:after {
+//           @include stroke(178px);
+//           transform: translate3d(calc(2rem),0,0) rotate(180deg) scale(-1, -1);
+//       }
+//     }
+
+//   };
+
+// };
+
+.product-colour {
+    &-black {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $black;
+        }
+
+        strong {
+            @include underline('black');
+        }
+    }
+
+    &-blue {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $blue;
+        }
+
+        strong {
+            @include underline('blue');
+        }
+    }
+
+    &-gold {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $gold;
+        }
+
+        strong {
+            @include underline('gold');
+        }
+    }
+
+    &-pink {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $pink;
+        }
+
+        strong {
+            @include underline('pink');
+        }
+    }
+
+    &-salmon {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $salmon;
+        }
+
+        strong {
+            @include underline('salmon');
+        }
+    }
+
+    &-grey {
+        .product__excerpt p,
+        .product__profile-header h2 {
+            color: $grey;
+        }
+
+        strong {
+            @include underline('grey');
+        }
+    }
+}
+
+.product__profile-header {
+  @extend %flex;
+  @extend %flex-wrap;
+  @extend %flex-align-center;
+  @extend %flex-justify-space-between;
+
+  .h4 {
+    margin-bottom: 0;
+  }
+}
+
+.product__stockists-find {
+  margin: 2rem 0;
+}
+
+.product__profile-block {
+  margin-bottom: 2rem;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.content-block--product-excerpt {
+  @extend %flex;
+  @extend %flex-column;
+  @extend %flex-center;
+  margin: 0;
+}
+
+.product__stockists {
+  @extend %ul-no-style;
+}
+
+.button.product__stockists-link {
+  @extend %h5;
+  text-transform: none;
+}

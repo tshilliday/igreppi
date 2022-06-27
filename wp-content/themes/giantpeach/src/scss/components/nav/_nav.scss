@@ -1,0 +1,128 @@
+// components/nav
+
+.nav {
+
+    background-color: #28251F;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform .3s;
+    transform: translate3d(0,125%,0);
+    z-index: 5;
+    color: $white;
+
+    &.is-open {
+        transform: translate3d(0,0,0);
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: $white;
+    }
+
+    h4, .h4 {
+      display: block;
+      margin-bottom: 1rem !important;
+      a {
+        font-weight: 400;
+      }
+    }
+
+    h4.info, .h4.info {
+      @extend %display-font;
+      color: $salmon;
+    }
+
+    ul {
+        @extend %ul-no-style;
+    }
+
+    li {
+        position: relative;
+    }
+
+    a {
+        color: $white;
+        transition: color .3s $ease-smooth;
+        &:hover {
+          color: $blue !important;
+        }
+    }
+
+    .sub-menu, #menu-information {
+
+      margin-bottom: 1rem;
+
+        a {
+            display: block;
+            width: 100%;
+            padding: .2rem 0 .2rem 0;
+        }
+    }
+
+    .sub-menu {
+      a {
+        color: $gold;
+      }
+    }
+
+    #menu-main-menu {
+      > li {
+        > a {
+          @extend %h4;
+          display: block;
+          color: $white;
+          margin-bottom: 1rem;
+          @include lt-bp-lg {
+            font-size: 1.5rem;
+          };
+          @include bp-lg {
+            margin-bottom: .75rem;
+          };
+          @include bp-xl {
+            margin-bottom: 1.5rem;
+          };
+        }
+        > ul {
+          margin-top: -1rem;
+        }
+      }
+    }
+
+    .hide-lt-menu {
+      margin-bottom: 1rem;
+    }
+
+    address {
+      margin-bottom: 1rem;
+    }
+}
+
+.nav__inner {
+  overflow: auto;
+  overflow-x: hidden;
+  margin: 1rem 0;
+  margin-top: 150px;
+  height: calc(100% - 150px - 1rem);
+  .admin-bar & {
+    margin-top: 150px + 32px;
+    height: calc(100% - 150px - 32px - 1rem);
+  }
+  @media screen and (min-height: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @include bp-menu {
+    margin: 120px 0 100px !important;
+    height: calc(100% - 120px - 100px) !important;
+      @include bp-lg {
+        margin: 160px 0 100px !important;
+        height: calc(100% - 160px - 100px) !important;
+      };
+  };
+}

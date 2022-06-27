@@ -1,0 +1,14 @@
+// components/forms/button
+
+.content form {
+
+    ul {
+        li {
+            padding-left: 0;
+            &:before {
+                content: "";
+            }
+        }
+    }
+
+}

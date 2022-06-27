@@ -1,0 +1,24 @@
+.map__text {
+  @extend %display-font;
+  @extend %h4;
+  opacity: 0;
+  transition: all .5s $ease-smooth;
+}
+
+.js-enabled .in-viewport, .no-js {
+  .map__text {
+    opacity: 1;
+  }
+}
+
+.map, .map__bg, .banner--contact
+{
+  path {
+    stroke-linecap: round;
+  }
+}
+
+@import 'vineyard';
+@import 'bg';
+@import 'satellite';
+@import 'line';

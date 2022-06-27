@@ -1,0 +1,143 @@
+.map--vineyard {
+    overflow: visible !important;
+    position: relative;
+    padding-bottom: (736.33 / 666.41) * 100%;
+    width: 100%;
+
+
+    > * {
+        position: absolute;
+    }
+
+    svg {
+        overflow: visible;
+    }
+
+    .map__text {
+        width: 80%;
+        max-width: 382px;
+        bottom: 20%;
+        right: 10%;
+        opacity: 0;
+        @include lt-bp-lg {
+          width: 69%;
+          max-width: 382px;
+          bottom: 16%;
+          right: 0%;
+        };
+        @media screen and (max-width: 415px) {
+          font-size: 18px;
+        };
+    }
+
+    // .map__top {
+    //     overflow: visible !important;
+    //     top: 0;
+    //     left: 0;
+    //     width: (350.88 / 666.41) * 100%;
+    //     height: auto;
+    // }
+
+    // .map__bottom {
+    //     overflow: visible !important;
+    //     bottom: 0;
+    //     right: 0;
+    //     height: auto;
+    //     width: (619.4 / 666.41) * 100%;
+    // }
+
+    .map__path {
+        stroke: $white;
+        fill: $white;
+    }
+
+  }
+
+  .no-js {
+    .map--vineyard {
+        .map__path {
+          stroke: $blue;
+          fill: $blue;
+        }
+        .map__text {
+          opacity: 1;
+        }
+    }
+  }
+
+  .js-enabled {
+
+    .in-viewport {
+
+        .map--vineyard {
+
+            .map__path {
+                stroke: $blue;
+                fill: $white;
+            }
+
+            .map__path--top {
+                stroke-dasharray: 1108;
+                stroke-dashoffset: 1108;
+                animation-delay: 1.25s;
+            }
+
+            .map__path--bottom {
+                stroke-dasharray: 1997;
+                stroke-dashoffset: 1997;
+                animation-delay: 1s;
+            }
+
+            .map__path--top {
+                animation: map-top-draw 2s $ease-smooth forwards;
+            }
+
+            .map__path--bottom {
+                animation: map-bottom-draw 5s $ease-smooth forwards;
+            }
+            .map__text {
+                animation: fade-in 7s $ease-smooth forwards;
+            }
+
+        }
+
+    }
+
+  }
+
+  @keyframes map-top-draw {
+    0% {
+      stroke-dashoffset: 1108;
+      fill: $white;
+    }
+    40% {
+      fill: $white;
+    }
+    60% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: $blue;
+    }
+  }
+
+  @keyframes map-bottom-draw {
+    0% {
+      stroke-dashoffset: 1997;
+      fill: $white;
+    }
+    40% {
+      fill: $white;
+    }
+    60% {
+      stroke-dashoffset: 0;
+    }
+    70% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: $blue;
+    }
+  }

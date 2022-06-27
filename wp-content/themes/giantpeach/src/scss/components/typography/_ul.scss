@@ -1,0 +1,146 @@
+%ul-no-style {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding-left: 0;
+    &:before {
+      content: none;
+      display: inline;
+      color: inherit;
+      position: relative;
+      top: 0;
+      left: 0;
+      background: none;
+      border: none;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.inline-list {
+  @extend %ul-no-style;
+  @extend %flex;
+  @extend %flex-justify-center;
+  @extend %text-uppercase;
+
+  a {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+}
+
+ul,
+ol {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  font-weight: 500;
+
+  &.r {
+    @extend %ul-no-style;
+    margin: 0 (-1 * $spacingPx / 2);
+    > li {
+      padding-left: $spacingPx / 2;
+    }
+  }
+
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  li {
+    padding-left: 1.7em;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      color: $salmon;
+    }
+  }
+}
+
+ul {
+  li:before {
+    content: '';
+    display: block;
+    top: 9px;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: $salmon;
+  }
+  ul {
+    li {
+      &:before {
+        width: 4px;
+        height: 4px;
+        background: $white;
+        border: 1px solid $salmon;
+      }
+    }
+  }
+  // ol inside ul - edge case
+  ol {
+    > li {
+      &:before {
+        width: auto;
+        height: auto;
+        background: none;
+        border: none;
+      }
+    }
+  }
+}
+
+ol {
+  counter-reset: listitem;
+  li {
+    &:before {
+      top: 0;
+      counter-increment: listitem;
+      content: counters(listitem, '.') '.';
+    }
+  }
+
+  ol {
+    li {
+      padding-left: 2.3em;
+    }
+  }
+
+  // ul inside ol - edge case
+  ul {
+    > li {
+      &:before {
+        content: '';
+        display: block;
+        top: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: $salmon;
+      }
+    }
+  }
+}
+
+
+ul.meta {
+  @extend %ul-no-style;
+  li:before {
+    @extend %fas;
+    display: inline;
+    color: inherit;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    margin-right: .5rem;
+  }
+}

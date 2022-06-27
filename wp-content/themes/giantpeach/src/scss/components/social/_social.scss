@@ -1,0 +1,46 @@
+// components/social/social
+
+.social,
+ul.social {
+    @extend %ul-no-style;
+    @extend %flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.social__icon {
+    @extend %flex;
+    @extend %flex-justify-center;
+    @extend %flex-align-center;
+    @extend %fg-white;
+    @include font-size(18px);
+    height: 16px;
+    width: 16px;
+    margin: 0 16px 0 0;
+    @include bp-menu {
+      margin: 0 0 0 16px;
+    };
+
+    a {
+        @extend %flex;
+        @extend %flex-justify-center;
+        @extend %flex-align-center;
+        font-weight: normal;
+        width: 100%;
+        height: 100%;
+    }
+
+    .product__share & {
+        border-color: $grey;
+    }
+
+}
+
+@each $socialnetwork in map-keys($socialnetworks) {
+    .social__icon--#{$socialnetwork} {
+        @extend %fg-#{$socialnetwork};
+        i {
+            @extend %fg-#{$socialnetwork};
+        }
+    }
+}

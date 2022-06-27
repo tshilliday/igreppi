@@ -1,0 +1,46 @@
+@each $b in map-keys($breakpoints) {
+    .hide-lt-#{$b} {
+        @media (max-width: (map-get($breakpoints, $b) - 1) + px) {
+            display: none !important;
+        }
+    }
+    .hide-lteq-#{$b} {
+        @media (max-width: map-get($breakpoints, $b) + px) {
+            display: none !important;
+        }
+    }
+    .hide-gteq-#{$b} {
+        @media (min-width: map-get($breakpoints, $b) + px) {
+            display: none !important;
+        }
+    }
+    .hide-gt-#{$b} {
+        @media (min-width: (map-get($breakpoints, $b) + 1) + px) {
+            display: none !important;
+        }
+    }
+}
+
+.hide-lt-menu {
+    @media (max-width: ($bp-menu - 1) + px) {
+        display: none !important;
+    }
+}
+
+.hide-lteq-menu {
+    @media (max-width: $bp-menu + px) {
+        display: none !important;
+    }
+}
+
+.hide-gteq-menu {
+    @media (min-width: $bp-menu + px) {
+        display: none !important;
+    }
+}
+
+.hide-gt-menu {
+    @media (min-width: ($bp-menu + 1) + px) {
+        display: none;
+    }
+}

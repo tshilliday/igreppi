@@ -1,0 +1,95 @@
+@mixin lt-bp-xs {
+    @media screen and (max-width: (map-get($breakpoints, xs) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-xs {
+    @media screen and (min-width: map-get($breakpoints, xs) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-s {
+    @media screen and (max-width: (map-get($breakpoints, s) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-s {
+    @media screen and (min-width: map-get($breakpoints, s) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-sm {
+    @media screen and (max-width: (map-get($breakpoints, sm) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-sm {
+    @media screen and (min-width: map-get($breakpoints, sm) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-md {
+    @media screen and (max-width: (map-get($breakpoints, md) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-md {
+    @media screen and (min-width: map-get($breakpoints, md) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-lg {
+    @media screen and (max-width: (map-get($breakpoints, lg) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media screen and (min-width: map-get($breakpoints, lg) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-xl {
+    @media screen and (max-width: (map-get($breakpoints, xl) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media screen and (min-width: map-get($breakpoints, xl) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-xxl {
+    @media screen and (max-width: (map-get($breakpoints, xxl) - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-xxl {
+    @media screen and (min-width: map-get($breakpoints, xxl) + px) {
+        @content;
+    }
+}
+
+@mixin lt-bp-menu {
+    @media screen and (max-width: ($bp-menu - 1) + px) {
+        @content;
+    }
+}
+
+@mixin bp-menu {
+    @media screen and (min-width: $bp-menu + px) {
+        @content;
+    }
+}

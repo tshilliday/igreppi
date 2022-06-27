@@ -1,0 +1,51 @@
+// components/footer/footer
+
+.footer {
+
+    @include font-size(12px);
+    flex-shrink: 0;
+
+    @include bp-menu {
+      color: rgba($white,0.7);
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      // transform: translate3d(0,100%,0);
+      transition: opacity .3s $ease-smooth;
+      transition-delay: .3s;
+      opacity: 0;
+
+      .is-menu-open & {
+        opacity: 1;
+        z-index: 20;
+      }
+
+      a {
+        color: rgba($white,0.7);
+        &:hover {
+          color: rgba($salmon,0.7) !important;
+        }
+      }
+    };
+}
+
+.footer__inner {
+  @extend %flex;
+  @extend %flex-justify-space-between;
+  @extend %flex-wrap;
+  @extend %flex-align-start;
+  padding: 1rem 0 3rem;
+  border-top: 1px solid $border-color;
+  @include bp-menu {
+    padding: 1rem 0 2rem;
+    border-color: rgba($white,0.7);
+  };
+}
+
+.footer__copyright {
+  @include bp-menu {
+    max-width: 80%;
+  };
+}

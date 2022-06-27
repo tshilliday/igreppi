@@ -1,0 +1,17 @@
+.content-block--featured-text {
+  &.text--left {
+    blockquote {
+      @extend %text-left;
+    }
+  }
+  &.text--center {
+    blockquote {
+      @extend %text-center;
+    }
+  }
+  &.text--right {
+    blockquote {
+      @extend %text-right;
+    }
+  }
+}

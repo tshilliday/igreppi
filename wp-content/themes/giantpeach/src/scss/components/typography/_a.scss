@@ -1,0 +1,21 @@
+// components/typography/a
+
+a,
+.a,
+%a {
+    color: $black;
+    font-weight: 600;
+    transition: all .3s $ease-smooth;
+}
+
+p, label {
+  a {
+    // color: initial;
+    // text-decoration: none;
+    @include underline('salmon');
+    transition: all .3s ease-out;
+    &:hover {
+      background-size: 100% 80%;
+    }
+  }
+}

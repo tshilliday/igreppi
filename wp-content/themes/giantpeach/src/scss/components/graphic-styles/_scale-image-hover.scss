@@ -1,0 +1,14 @@
+@mixin scale-up-image-on-hover {
+  overflow: hidden;
+  picture {
+    overflow: hidden;
+  }
+  img {
+    transition: transform 1s ease-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}

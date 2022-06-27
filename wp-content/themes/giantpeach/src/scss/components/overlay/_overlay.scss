@@ -1,0 +1,130 @@
+// components/overlay
+
+.overlay__button {
+  cursor: pointer;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background: rgba($black, 0);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    overflow: auto;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: background .6s;
+    visibility: hidden;
+    z-index: -1;
+
+    &.is-visible {
+        background: rgba($black, .8);
+        pointer-events: all;
+        visibility: visible;
+        z-index: 1500;
+
+        .overlay__inner {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all .6s;
+        }
+    }
+
+    .overlay__inner {
+        position: relative;
+        background: $white;
+        padding: 1rem;
+        max-width: 900px !important;
+        min-width: 80vw;
+        @include bp-sm {
+          min-width: 50vw;
+        };
+        @include bp-md {
+            padding: 2rem .75rem 2rem 2rem;
+            min-width: 33vw;
+        };
+    }
+
+    .overlay__close {
+        position: absolute;
+        top: -2px;
+        right: -5px;
+        cursor: pointer;
+        display: block;
+        width: 25px;
+        height: 25px;
+        transform: translate3d(0,-100%,0);
+        &:after {
+            @include font-size(26px);
+            @extend %fal;
+            content: "\f00d";
+            color: $white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%,-50%,0);
+        }
+    }
+
+    .overlay__content {
+        max-height: 80vh;
+        overflow-y: scroll;
+        padding-right: 1.25rem; // for scrollbar
+    }
+
+}
+
+
+.overlay--video {
+    .overlay__inner {
+      max-width: 100% !important;
+      max-height: 90%;
+      opacity: 0;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(25px);
+      transition: all 0.6s;
+      padding: 0;
+      line-height: 0;
+      background: transparent;
+      width: 98%;
+
+      @include bp-sm {
+        width: 80%;
+      }
+
+      iframe {
+        width: 98vw !important;
+        height: 50vw !important;
+
+        @include bp-sm {
+          width: 80vw !important;
+          height: 40vw !important;
+        }
+      }
+    }
+
+    .overlay__content {
+      overflow-y: hidden;
+      background: $black;
+    }
+
+    .overlay__close {
+      transform: none;
+      margin-left: auto;
+      margin-bottom: .5rem;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      color: $white;
+      &:after {
+          color: $white;
+      }
+    }
+  }

@@ -1,0 +1,112 @@
+// components/forms/gform
+
+.gform_body ul {
+    @extend %ul-no-style;
+    @extend %flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gform_description {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.gfield {
+    @extend %position-relative;
+    width: 100%;
+
+    label {
+        color: $body-font-color;
+        @extend %position-absolute;
+        font-weight: 100;
+        left: 1rem;
+        top: 1rem;
+        transition: all .3s;
+
+        &.is-focus {
+            color: $purple;
+            transform: translate(-1.1rem,-2.5rem) scale(0.9);
+        }
+    }
+
+    &.gfield--static {
+        label {
+            position: relative;
+        }
+    }
+
+    input:not([type=checkbox]), textarea, select {
+        @extend %input;
+    }
+
+    &.float-left {
+        float: left;
+    }
+}
+
+.gfield--fifty {
+    @include bp-md {
+        width: 49%;
+    };
+}
+
+.gfield--hide-label {
+    > label {
+        display: none;
+    }
+}
+
+.gfield {
+    padding-bottom: 1.4rem;
+}
+
+.validation_error {
+    color: $red;
+    margin-bottom: 2rem;
+}
+
+.gfield_description.validation_message {
+    color: $red;
+}
+
+.gfield_error {
+    input, textarea, select {
+        background: lighten($red,55%);
+        border: 1px solid $red !important;
+    }
+    input[type=checkbox] {
+        + label {
+            &:before {
+                background: lighten($red,55%);
+                border: 1px solid $red !important;
+                color: lighten($red,55%);
+            }
+        }
+    }
+}
+
+.gform_footer {
+    @extend %flex;
+    @extend %flex-align-center;
+    flex-direction: row-reverse;
+    .button, button {
+        @include button-bg($green);
+    }
+}
+
+.gfield--checkbox {
+    padding: 0;
+}
+
+.gfield_checkbox li {
+    margin-bottom: .5rem;
+}
+
+.gform_validation_container {
+    display: none;
+}
+
+.gform_ajax_spinner {
+    margin-right: 10px;
+}

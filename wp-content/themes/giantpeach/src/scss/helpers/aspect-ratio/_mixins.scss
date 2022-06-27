@@ -1,0 +1,18 @@
+// components/aspect-ratio/mixins
+
+@mixin padding-top($width,$height) {
+    padding-top: ($height/$width)*100%;
+}
+
+@mixin aspect-ratio ($width,$height) {
+    position: relative;
+    @include padding-top($width,$height);
+    overflow: hidden;
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,16 @@
+.content-block--products {
+  h2 {
+    // @extend %h3;
+    color: $gold;
+    @include bp-lg {
+      @include font-size(65px);
+    }
+  }
+  .r {
+    width: calc(100% + #{$spacingPx});
+  }
+}
+
+.content-block--products_image {
+  display: block;
+}

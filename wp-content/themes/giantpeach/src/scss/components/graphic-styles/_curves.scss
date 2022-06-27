@@ -1,0 +1,29 @@
+@mixin curve($src, $width_percentage, $ratio_width, $ratio_height) {
+    padding-bottom: ( $ratio_height / $ratio_width) * ( $width_percentage / 100 ) * 100%;
+    content: "";
+    width: $width_percentage * 1%;
+    background-image: url($src);
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% + 1px);
+    line-height: 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    // @media (min-width: 1601px) {
+    //     padding-bottom: ( $height / $width * 100% / 2 );
+    // };
+}
+
+@mixin curve-top-left($src, $width_percentage, $ratio_width, $ratio_height) {
+    @include curve($src, $width_percentage, $ratio_width, $ratio_height);
+    top: -1px; // to prevent 1px transparent border
+    background-position: 'top center';
+}
+
+@mixin curve-bottom-right($src, $width_percentage, $ratio_width, $ratio_height) {
+    @include curve($src, $width_percentage, $ratio_width, $ratio_height);
+    bottom: -1px; // to prevent 1px transparent border
+    background-position: 'bottom center';
+}

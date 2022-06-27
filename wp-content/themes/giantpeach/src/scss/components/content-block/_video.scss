@@ -1,0 +1,11 @@
+.content-block--video {
+   @extend .content-block--products;
+   @include bp-lg {
+      margin: 7rem 0;
+   };
+   @include lt-bp-md {
+    .video-player {
+      margin: 2rem 0;
+    }
+   };
+}

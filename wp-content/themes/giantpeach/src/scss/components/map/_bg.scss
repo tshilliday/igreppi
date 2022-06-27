@@ -1,0 +1,84 @@
+
+.content-block--map-bg {
+    .c {
+        position: relative;
+    }
+    @include lt-bp-md {
+        .content-block__content {
+            position: relative;
+        }
+        .map__bg {
+            display: none;
+        }
+    }
+    @include bp-md {
+        .map__path {
+            stroke-width: 2;
+        }
+    }
+
+    .map__path {
+        fill: none;
+    }
+
+    .map__bg {
+        position: absolute;
+        right: 0;
+        bottom: -4rem;
+        z-index: -1;
+        width: 100%;
+        @include bp-md {
+          bottom: -2rem;
+            transform: translate3d(5%,10%,0);
+        }
+        @include bp-lg {
+            transform: translate3d(5%,5%,0);
+        }
+        @include bp-xl {
+          bottom: -7rem;
+        };
+    }
+
+}
+
+.js-enabled .content-block--map-bg.in-viewport {
+
+    .map--vineyard {
+
+        .map__path--top {
+            fill: none;
+            stroke-dasharray: 1108;
+            stroke-dashoffset: 1108;
+            animation: map-top-draw-outline 2s $ease-smooth forwards;
+            animation-delay: .5s;
+        }
+
+        .map__path--bottom {
+            fill: none;
+            stroke-dasharray: 1997;
+            stroke-dashoffset: 1997;
+            animation: map-bottom-draw-outline 3s $ease-smooth forwards;
+            animation-delay: 0;
+        }
+
+    }
+
+}
+
+@keyframes map-top-draw-outline {
+    0% {
+        stroke-dashoffset: 1108;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes map-bottom-draw-outline {
+    0% {
+        stroke-dashoffset: 1997;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

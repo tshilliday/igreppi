@@ -1,0 +1,79 @@
+{
+    "key": "group_5a1812890915d",
+    "title": "Form Notifications",
+    "fields": [
+        {
+            "key": "field_5a18129f43244",
+            "label": "To (email)",
+            "name": "to_email",
+            "type": "email",
+            "instructions": "The recipient of the form notifications",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5a1812c243245",
+            "label": "From (name)",
+            "name": "from_name",
+            "type": "text",
+            "instructions": "The name of the sender of the form notifications",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_5a18128e43243",
+            "label": "From (email)",
+            "name": "from_email",
+            "type": "email",
+            "instructions": "The email of the sender of the form notifications",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-form-settings"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1542205966
+}

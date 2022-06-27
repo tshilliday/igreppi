@@ -1,0 +1,41 @@
+.flickity-viewport {
+    width: 100%;
+}
+
+.flickity-button {
+    @extend %flex;
+    @extend %flex-center;
+    min-width: 0;
+    width: 38px;
+    height: 38px;
+    border: none;
+    padding: 0;
+    background: $red;
+    &:hover, &:focus, &:active {
+        background: $green;
+        box-shadow: none;
+    }
+    
+    svg.flickity-button-icon {
+        fill: $white;
+        width: 40%;
+        left: 30%;
+        height: 50%;
+        top: 25%;
+    }
+
+}
+
+ol.flickity-page-dots {
+    @extend %ul-no-style;
+    @extend %flex;
+    @extend %flex-center;
+    padding-left: 0 !important;
+    .dot {
+        transition: opacity .3s ease-in-out;
+
+        &.is-selected {
+            opacity: .8;
+        }
+    }
+}

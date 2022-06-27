@@ -1,0 +1,24 @@
+// components/forms/input-group
+
+.input-group {
+    @extend %flex;
+    flex-wrap: wrap;
+
+    @include bp-md {
+        flex-wrap: nowrap;
+    };
+
+    input,
+    button {
+        flex: 1 1 auto;
+        width: 100%;
+
+        @include bp-md {
+            width: auto;
+        };
+    }
+
+    button {
+
+    }
+}

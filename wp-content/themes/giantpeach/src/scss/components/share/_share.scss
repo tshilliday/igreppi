@@ -1,0 +1,44 @@
+// components/share/share
+
+.share__container {
+    @extend %flex;
+    @extend %flex-align-center;
+    @include bp-md {
+        .single-product & {
+            justify-content: flex-end;
+        }
+    };
+}
+
+.share__heading {
+    color: $grey;
+    margin: 0 3rem 0 0;
+}
+
+ul.share {
+    @extend %flex;
+    @extend %ul-no-style;
+    font-weight: normal;
+
+    li {
+        margin: 0 7px;
+    }
+
+    span {
+        @extend %text-uppercase;
+        letter-spacing: .1em;
+        margin-right: 7px;
+    }
+
+    a,
+    span {
+        @include font-size(24px);
+        // -webkit-text-stroke-width: .5px;
+        // -webkit-text-stroke-color: $salmon;
+        color: rgba($salmon,0.8);
+        &:hover {
+            color: rgba($salmon,1);
+            // -webkit-text-stroke-width: 0;
+        }
+    }
+}

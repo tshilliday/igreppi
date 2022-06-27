@@ -1,0 +1,44 @@
+// helpers/animation/rotate
+
+%rotate-in-start {
+    opacity: 0;
+    transform: translateX(-50px) rotate(3deg);
+    transform-origin: left;
+    transition: all 3s $ease-out-circ .3s;
+}
+
+%rotate-in-end {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+%rotate-in-start {
+    opacity: 0;
+    transform: translateX(-50px) rotate(3deg);
+    transform-origin: left;
+    transition: all 3s $ease-out-circ .3s;
+}
+
+%rotate-in-end {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+%rotate {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}

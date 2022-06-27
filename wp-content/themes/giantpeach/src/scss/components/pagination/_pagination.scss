@@ -1,0 +1,36 @@
+// components/pagination/pagination
+
+.nav-links {
+    @extend %flex;
+    @include font-size(14px);
+    border-left: 1px solid $grey;
+    margin: 0 $spacing*1px $spacing*3px;
+
+    .next,
+    .prev {
+        display: none;
+    }
+
+    a,
+    span {
+        align-items: center;
+        border: 1px solid $grey;
+        border-left: none;
+        display: none;
+        height: 46px;
+        justify-content: center;
+        margin: 0;
+        min-width: 50px;
+        transition: all .6s $ease-out-circ;
+
+        @include bp-sm {
+            display: flex;
+        };
+    }
+
+    a:hover, .current {
+        background-color: $red;
+        border-color: $red;
+    }
+    
+}

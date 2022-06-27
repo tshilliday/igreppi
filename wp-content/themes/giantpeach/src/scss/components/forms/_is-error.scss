@@ -1,0 +1,27 @@
+.is-error {
+  input,
+  textarea,
+  select {
+    border-color: 2px solid $red !important;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    + label {
+      &:before {
+        border-color: $red !important;
+      }
+    }
+  }
+
+  &.input {
+    // only on inputs, not form
+
+    .input-message {
+      color: $red;
+      @extend %text-left;
+      @include font-size(14px);
+      width: 100%;
+    }
+  }
+}

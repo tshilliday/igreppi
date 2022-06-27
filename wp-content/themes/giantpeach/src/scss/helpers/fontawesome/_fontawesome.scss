@@ -1,0 +1,23 @@
+%fa {
+  font-family: 'Font Awesome 5 Pro';
+}
+
+%fal {
+  @extend %fa;
+  font-weight: 300;
+}
+
+%far {
+  @extend %fa;
+  font-weight: 400;
+}
+
+%fas {
+  @extend %fa;
+  font-weight: 900;
+}
+
+%fab {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+}

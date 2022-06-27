@@ -1,0 +1,141 @@
+%border-50 {
+    border-radius: 50%;
+}
+
+%block {
+    display: block;
+}
+
+%inline-block {
+    display: inline-block;
+}
+
+%opacity-0 {
+    opacity: 0;
+}
+
+%opacity-1 {
+    opacity: 1;
+}
+
+%position-relative {
+    position: relative;
+}
+
+%position-absolute {
+    position: absolute;
+}
+
+%position-sticky {
+    position: sticky;
+}
+
+@import 'helpers/normalize/normalize';
+@import 'helpers/aspect-ratio/mixins';
+@import 'helpers/flex/flex';
+@import 'layout/grid/grid';
+@import 'helpers/hide/hide';
+@import 'components/colors/colors';
+@import 'helpers/fontawesome/fontawesome';
+@import 'helpers/lazyload/lazyload';
+// @import 'helpers/flickity/flickity';
+@import "helpers/animation/animation";
+
+@import 'components/typography/typography';
+@import 'components/graphic-styles/graphic-styles';
+@import 'components/button/button';
+@import 'components/forms/forms';
+@import 'components/alert/alert';
+@import 'components/pagination/pagination';
+@import 'components/content-block/content-block';
+
+@import 'components/header/header';
+@import 'components/wrapper/wrapper';
+@import 'components/content/content';
+@import 'components/footer/footer';
+@import 'components/picture/picture';
+@import 'components/nav/nav';
+@import 'components/menu-button/menu-button';
+@import 'components/banner/banner';
+@import 'components/block/block';
+@import 'components/social/social';
+@import 'components/product/product';
+@import 'components/post/post';
+@import 'components/share/share';
+@import 'components/gallery/gallery';
+@import 'components/overlay/overlay';
+@import 'components/table/table';
+@import 'components/map/map';
+@import 'components/line/line';
+@import 'components/post/categories';
+@import 'components/sidenav/sidenav';
+@import 'components/flood/flood';
+@import 'components/video-player/video-player';
+
+@import 'components/routes/page-template-contact';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    top: 0 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+ @media print {
+     body {
+         display: block;
+         height: auto;
+         width: 100%;
+
+     }
+     html {
+         height: auto;
+
+     }
+     .table__wrapper {
+         overflow: visible;
+
+     }
+     .row,
+     .r {
+         display: block;
+
+     }
+     .container {
+         width: 100%;
+
+     }
+     .header__inner {
+         flex-wrap: wrap;
+
+     }
+     .header__nav {
+         width: 100%;
+
+     }
+     .header__strapline {
+         text-align: left;
+
+     }
+     .nav,
+     .button,
+     .footer__bottom {
+         display: none;
+
+     }
+     .content {
+         padding: 0;
+         border: 0;
+
+     }
+ }
+
+ .moveit {
+   will-change: transform;
+ }

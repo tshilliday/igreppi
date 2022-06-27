@@ -1,0 +1,75 @@
+// components/forms/forms
+
+@import 'input';
+@import 'label';
+@import 'textarea';
+@import 'select';
+@import 'input-group';
+@import 'button';
+@import 'checkbox_radio';
+// @import 'gform';
+@import 'ul';
+@import 'is-error';
+
+.form--bg {
+  border-radius: 0;
+  background: $grey-x-lt;
+  padding: 2rem 1.5rem 1.5rem;
+
+  @include bp-sm {
+    padding: 2rem;
+  }
+
+  @include bp-md {
+    padding: 2rem 3rem;
+  }
+
+  input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+  textarea,
+  select {
+    background-color: $white;
+    border-color: $white;
+    + label {
+      &:before {
+        background-color: $white;
+        border-color: $white;
+      }
+    }
+    &:focus {
+      border-color: $green;
+    }
+  }
+
+  h2,
+  h3 {
+    color: $green;
+  }
+}
+
+// .gp_form {
+//   .input,
+//   button,
+//   .button {
+//     &.hide {
+//       visibility: hidden;
+//     }
+//   }
+//   &.sent {
+//     label {
+//       visibility: hidden;
+//     }
+//   }
+// }
+
+.form__footer {
+  @extend %flex;
+  @extend %flex-wrap;
+  @extend %flex-justify-space-between;
+  @extend %flex-align-center;
+}
+
+// .gp_form.sent {
+//     .input {
+//         display: none;
+//     }
+// }
